@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수</title>
+</head>
+<body>
+    <script>
+        /*변수의 종류
+        1.var
+        -ES6 이전부터 사용
+        -재선언 가능, 재활당 가능
+        -전역변수: 어디서든 접근 가능한, 프로그램 전체에 영역을 미치는 변수 , 덮어쓰기 가능, 협업시 비추전 */
+        var name = "2학년 3반";
+        console.log(name);
+        var name = "2학년 4반";
+        console.log(name);
+        
+        var x = 5;
+        var y = 7;
+        var z = x + y;
+        console.log("z :", z);
+        x = 9; //재할당
+        z = x - y; //재선언
+        console.log("z :", z);
+
+        /*
+        2.let
+        -ES6 이후 등장
+        -재선언 불가능 -> 권장
+        -재할당 가능
+        */
+       let x1 = 10;
+       let y1 = 7;
+       let z1 = x1 + y1;
+       console.log("z1 : ",z1)
+
+      // let x1 = 9;  재선언 불가능 - >Uncaught SyntaxError: Identifier 'x1' has already been declared (at 03_variable_diclaration.html:39:12)
+
+       x1 = 9;
+       y1 = 11;
+       z1 = x1 - y1;
+       console.log("z1 :" , z1);
+
+       /* 3. const
+       -ES6 이후 등장 
+       -재선언, 재할당 모두 불가능 -> 상수
+       -상수 선언에 활용  */
+       const PI = 3.14;
+       //PI = 3; => 콘솔에 가면 에러 
+       const dateFormat = "DD-MM-YYYY"; //현업에서 포멧을 만들때 const로 선언해서 바뀌지 않는 상수로 만들수 있다 
+        
+    </script>
+</body>
+</html> 

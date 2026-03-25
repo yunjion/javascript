@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트의 작성 위치</title>
+    <script>
+       //출력하는 문장 자바에 system.println()이 있다면 자바스크립트에는 document.write()가 있다. window는 생략이 가능 
+       window.document.write("Hello World -1");
+       
+       
+    </script>
+      <!-- 자바스크립트의 작성 위치 -->
+    <!-- 자바스크립트의 작성 위치 
+     1. <head> => 3
+     2. <body> => 2
+     3. 외부 파일 삽입 => 1 
+     4. 태그사이 (인라인) => 4(비추천)
+      -->
+    <p>Hello World -2</p>
+    <p>졸지마 !!!!</p>
+    <script>
+        document.write("Hello World -3");
+    </script>
+</head>
+<html lang="en">
+    <body>
+    <br />
+  <script src="./js/01_js_location.js" defer></script>
+    <br />
+    <button onclick="functionMY();">전송</button>
+</body>
+</html>
