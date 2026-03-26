@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*배열
+        - 하나 이상의 데이터를 담을 수 있다.
+        -데이터에는 순서가 존재한다
+        - index : 0부터
+        - []
+        - 어떤 데이터도 올 수 있다.
+        - 어떤 데이터도 함께올 수 있다.
+        - 생성하는 순간 속성 (property) 중 length 자동으로 생김 
+        */
+
+        let nums = [1,2,3,4,5];
+        let str = ["a","b","c"];
+        let mix = [3,5.6,false,[3,4,5], {name : "공은성"}];
+        console.log(nums.length);
+        console.log(str.length);
+        console.log(mix.length);
+        console.log(mix[4]);
+        console.log(mix[3]);
+
+        //nums의 값 수정
+        nums[4]=6;
+        console.log(nums);
+
+        // 배열의 내장 함수(pop(),push())
+        //매개변수(parameter) : 함수를 실행하기 위해 전달하는 값
+
+        //pop() 맨 끝에 값 
+        console.log(mix.pop());
+        console.log(mix);
+        console.log(mix.pop());
+        console.log(mix);
+        console.log(mix.pop());
+        console.log(mix);
+
+        console.log(mix.push(name));
+        /* 활용
+         - object 와 함께 사용
+         - 예를 들어 우리가 개발한 웹사이트에서 사용자 목록을 가져와 처리를 한다고 가정하자 
+         */
+
+         let userList = [{},{},{}]; // 시험 문제 
+         console.log(userList.length);
+         userList[0];
+         console.log(userList[1].name);
+
+
+        
+
+
+
+
+    </script>
+ 
+</body>
+</html>
