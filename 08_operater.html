@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1. 할당 연산자(산술 연산자 - 이항)
+        let x = 2;
+        let y =3;
+        x = x + y;
+        console.log(y);
+        console.log(x);
+        x = x-y;   
+        console.log(x); 
+        x = x * y;
+        console.log(x);
+        x = x / y;
+        console.log(x); 
+        x = x % y;
+        console.log(x); 
+        x = x ** y;
+        console.log(x);
+        
+        console.log('--------------------');
+        //2. 복합 할당 연산자
+        x = 3;
+        y = 5;
+        console.log((x += y)); // x = x+y // 8 
+        x = x++
+        console.log((x -= y)); // x = x-y(위에 x+y여서 x는 8로 바뀐다) // 3
+        x = ++x
+        console.log((x *= y)); // x = x*y // 15
+        console.log((x /= y)); // x = x/y // 3
+        console.log((x %= y)); // x = x%y // 3
+
+        console.log('--------------------');
+
+        //3. 비교 연산자 : ==, ===, !=, !==
+        let a = 3;
+        let b = "3";
+        console.log(a == b); // true = 값만 비교 
+        console.log(a === b); // false => 값과 타입 다 비교
+        
+        console.log('--------------------');
+
+        //4. 산술 연산자 : 단항  ++(증가) ,--(감소) ,+(숫자화) ,- (단항부정)
+        x = 5; // 6
+        y = 6;
+        y = ++x; //증가하고 할당 x++ 할당 하고 증가
+        console.log(x); //6
+        console.log(y); //6
+        console.log('--------------------');
+
+
+        //5. 단항부정 연산자 : 부호를 바꿔주는 역할 
+        x = -3;
+        console.log(x);
+        console.log(-x);
+        console.log('--------------------');
+
+        //6. 숫자화 연산자 
+        let z = true; // true =  숫자로 1 + 붙이면 숫자화 
+        console.log(+z);
+        
+         x = +"3";
+         y = +"5";
+         console.log(x + y);
+        console.log('--------------------');
+
+         //활용 : prompt로 두수를 입력받아 합을 구하는 코드 작성
+         //효율성, 가동석, 결과 확인...
+2 
+        
+       let num1 = +prompt("첫번째 수 입력");
+        let num2 = +prompt("두번째 수 입력");
+        console.log("두수의 합:",num1 + num2);
+
+        //  let num1 = Number(prompt("첫번쨰 수"));
+        //  let num2 = Number(prompt("두번째 수"));
+        //  console.log(num1+num2); // Number 객체가 메소드를 모두 불러와서 무거워진다
+        console.log('--------------------');
+
+        
+        //7.논리 연산자 : 여러가지 조건을 만족 시키는지 알아보는 연산자
+
+        
+
+3
+        
+        
+
+       
+    </script>
+</body>
+</html>
