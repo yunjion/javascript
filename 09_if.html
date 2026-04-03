@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //나이에 따른 버스 요금 계산
+        // let age = prompt("나이를 입력하세요");
+        // if(age <= 6) {
+        //     console.log("무료");
+        // }else if(age < 12) {
+        //     console.log("450");
+        // } 
+        // else if(age < 18) {
+        //     console.log("700");
+        // }else if(age <= 18) {
+        //     console.log("1000");
+        // }else {
+        //     console.log("무료(노인)");
+        // }
+        
+        //false : false,0,"",Nullm,undefined, NaN 나머지는 true
+        let age = prompt("나이를 입력하세요");
+        let busFare = '값이 없다';
+        
+        if(age) {
+        if(age < 6 || age >= 70) {
+            busFare = "무료";
+        }
+        else if(age < 12) {
+            busFare = 450;
+        }
+        else if (age <= 12) {
+            busFare = 700;
+        }
+        else if (age < 18) {
+            busFare = 700
+        }
+        else {
+            busFare = 1000;
+        }
+    }
+        
+        console.log(busFare);
+
+
+    </script>
+</body>
+</html>
