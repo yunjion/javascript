@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object객체</title>
+</head>
+<body>
+    <script>
+        /* 객체 (Object)
+        - 관련있는 데이터를 하나로 담을 수 있는 객체
+        - 파이썬의 딕셔너리와 유사 
+        - {} 로 감싼다.
+        - {키(key):값(value)}으로 표현 한다 
+        - 파이썬은 키값에 숫자가 올수 있지만 자바 스크립트에는 문자열만 올 수 있다.
+        - 값에는 거의 모든 데이터 타입 가능 (문자열, 숫자, 배열, 객체, boolean 함수 ....)
+        - 객체는 순서를 보장하지 않는다 [ES6이후 보장 ]
+        - 
+        */
+       let student = {
+        name :"공은성",
+        age  :17,
+        phone :"010-1111-1111",
+        address :"서울시 관악구",
+        number :2301,
+        hobby : ["게임","잠","헬스"]
+       };
+       console.log(student);
+
+       let person = {
+        111 : "111",
+        222 : "222",
+        // 문자열로 변환을 해버린다
+
+       };
+       console.log(person)
+
+       //1. 객체의 키값을 가져오기 
+      let keys = Object.keys(person); //배열로 리턴
+      console.log(keys);
+      console.log(keys[0],keys[1]);
+      //2. 객체의 값을 가져오기 => . 연산자 
+      let name = student.name; //변수 scope : {} 안에서 선언 했다면 {} 내에서만 ,var는 예외
+        console.log(name);
+
+      //3. 객체의 값을 변경하기 => 키로 불러서 할당
+      student.age = 27;
+      console.log(student);
+
+      //4. 객체의 키, 값을 추가하기 
+      student.gender = "남성";
+       console.log(student);
+
+       //5. !!!중요 => 실시간으로 특정 키에 접근해야 하는 경우
+       console.log(student.name);
+       console.log(student["name"]);
+
+       let userInput  = prompt
+       ("알고 싶은 내용은?(name,age,hobby,number,phone,address)");
+       //  console.log(userInput);
+    
+       console.log(student[userInput]);
+      
+       //6. 만약 존재하지 않는 키에 접근한다면? => undefind
+
+    </script>
+    
+</body>
+</html>

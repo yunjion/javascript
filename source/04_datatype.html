@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        -Prettier code formatter => ""
+        -연산 : + 
+        -다양한 속성(property:파란)과 메서드(보라) 지원
+        */
+       let name1 = "Mirim";
+       console.log(name1.length);
+       //let name2 = 'Mirim';
+       let str1 = "그는 '존' 이라고 합니다.";
+       let str2 = '그는 "존" 이라고 합니다. ';
+       //let str3 = "그는 \"존\"이라고 합니다."; 이스케이프 문자 
+       console.log(str1);
+       console.log(str2);
+
+       let firstname = "JOHN";
+       let lastName = "Bacon";
+       let fullName = firstname + lastName;
+       console.log(fullName);
+       /* 2. 숫자형 (Number)객체 
+       - 정수, 실수 다 표현 
+       - 다양한 속성(property:파란)과 메서드(보라) 지원
+       - 64비트 부동 소수점 방식 => 정밀도 오차 => 헤결(금융, 과학계산)*/
+       let n1  = 3;
+       let n2 = 5.789;
+       console.log(n1,n2);
+
+       console.log(Number.MAX_VALUE);
+       console.log(Number.MAX_VALUE + Number.MAX_VALUE);
+
+       //정밀도 오차 
+       let result = 0.1+0.2;
+       if(result == 0.3) {
+        console.log("정답 ! !");
+       }else {
+        console.log("오답 ! !");
+       }
+        console.log(result)
+       console.log((0.1*10 + 0.2*10) / 10);
+       console.log( (0.1+0.2).toFixed(1));
+       /* 정밀도 오차 해결
+       1. 정수로 변환 후 계산 : (0.1*10 + 0.2*10) / 10
+       2. 출력시 조작 : toFixed(n) <- (0.1+0.2).toFixed(1)소수점 이하 몇 번째 까지 자르라는 메소드 
+          숫자가 조작 되어서 문자로 변형 된다 
+       3. 오픈 라이브러리 사용  */
+      
+
+       //Boolean 객체 true or false
+       let userAge = 17;
+       let adultAge = 20;
+       let isAdult = userAge >= adultAge;
+       console.log(isAdult);
+
+       /* 4. undefind(중요)
+       -정의 되지 않은, 값을 할당하지 않은 ..
+       -데이터 타입, 데이터 값
+       -개발자 실수 했을때 나온다 (선언만 하고 할당을 안해 !!)
+       => 브라우저 엔진이 자동으로 할당 
+    
+       참고 시험에 나옴) 자바스크립트에서 항상 false 인 값 : 
+       false, 0,""(빈문자열), undefind, null, NaN(Not a Number)
+       */
+
+       /* 5. null(중요)
+       1. 없음을 의미 
+       2. 개발자가 의도적으로 할당 => 선언하는 시점에 
+          어떤 데이터 타입이나 값이 올지 모르는 경우 
+       3. Garbage Collection : 메모리 효율을 위해서 더 이상 사용하지 
+          않는 메모리를 해제 (기본적으로 자동으로 되지만 사용자가 원하는 메모리를 해제할때)
+          */   
+       
+       let a;
+       console.log(a); 
+
+       let y = "굉장히 큰 사용자 데이터 주소 " ;
+       y = null;
+
+       
+
+    </script>
+</body>
+</html>
