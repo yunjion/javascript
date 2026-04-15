@@ -12,11 +12,25 @@
             //코드 부분 
             // (return) 있을 수도 있고 없을 수도 있다
         }
-        -선언전 호출이 가능 */
+        -선언전 호출이 가능]
+        -이유? js는 브라우저에서 동작하는 것과 Node.js로 동작하는 것이 있다 
+        브라우저동작 = 동작하는 것은 브라우저 엔진으로 동작 시킨다
+                     코드 순서대로 동작
+                     브라우저가 마음대로 정하는 것
+                     1. 선언 함수
+                     2. 전역 변수 이 두개를 제일 먼저 메모리에 갖다 두고 그 후에 나머지를 동작 시킨다 
+         */
         console.log(sum(9,8));
         function sum(n1,n2) {
             return n1 + n2;
         }
+        function taxAmount(productPrice) {
+            let tax = 0.1;
+            return tax * productPrice;
+        }
+        console.log(taxAmount(14500));
+
+
     </script>
 
 </body>
