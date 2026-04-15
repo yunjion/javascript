@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+         let brands = ["애플","구글","아마존","마이크로소프트","메타"];
+         for(const i in brands) {
+            //i 인덱스 => 배열에서 그다지 많이 사용되지는 않는다.
+            console.log(i);
+            console.log(brands[i]);
+         }
+
+        //  let person = {
+        //  name : "홍길동" ,
+        //  age : 22,
+        //  tel: "010-0000-0000",
+        //  city : "Seoul"
+        // };
+        
+        // for(const key in person) {
+        //     console.log(key);
+        // }
+        // // 값을 읽어오기
+        // for(const key in person) {
+        //     console.log(key, ":",person[key]);
+        // }
+
+
+        //     let person = {
+        //     name : "홍길동" ,
+        //     age : 22,
+        //     tel: "010-0000-0000",
+        //     city : "Seoul"
+        //         };
+    
+        //     let key = prompt("알고 싶은 키값을 입력하세요");
+          
+        //     if(key === "" || key === null) {
+        //         console.log("키 값이 없습니다")
+        //     }
+        //     else {
+        //         let found = false;
+
+        //         for(const key in person) {
+        //             if(key === person) {
+        //             console.log(key, ":",person[key]);
+        //             found = true;
+        //             }
+        //         }
+        //         if(!found) {
+        //             console.log("일치 하지 않는 키 값 ");
+        //     }
+           
+        // }
+
+            let person = {
+            name : "홍길동" ,
+            age : 22,
+            tel: "010-0000-0000",
+            city : "Seoul"
+            
+            };
+
+
+            let userInput = prompt("키를 입력하세요");
+                if(!userInput) {
+                    console.log("키를 입력해야 합니다.");
+                }
+                else {
+                    for(const key in person) {
+                        if(userInput === key) {
+                            console.log(userInput, ":",person[userInput]);
+                            break;
+                        }
+                        else {
+                            console.log("적합한 키를 입력해줏요");
+                        }
+                    }
+                }
+        
+        </script>
+</body>
+</html>
