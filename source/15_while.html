@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* while
+        - 조건이 참인동안 반복
+        - 무한 루프 조심
+        - 한 번도 실행하지 않을 수도 있다. 
+        */
+        let i = 0;    
+        while(i < 10) {
+            console.log(i);
+            i++;
+        }console.log(i); //10
+
+        //2. do while : 반드시 한번은 실행
+        do {
+            console.log("do while" ,i);
+            i++;
+        }while(i <10);
+
+        //3.활용 
+        //동전 교환 코드 
+        //7900 원을 입력 받아 500원짜리 몇개가 나오는지 거스름돈 얼마 
+
+        let inputMoney = 7900;
+        let coinUnit = 500;
+        let count = 0;
+        while (inputMoney >= coinUnit) {
+          inputMoney -= coinUnit;
+          count++;
+
+        }; console.log("500원 동전 갯수:",count,"잔돈",inputMoney);
+    
+    </script>
+</body>
+</html>
