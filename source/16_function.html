@@ -66,6 +66,34 @@
          console.log(sum3(4,5));
 
          //과제 더할 숫자 2개, 연사자를 입력받아 연산을 실행하는 함수를 작성해보자 
+         function calc(a, b, op) {
+            switch(op) {
+                case '+':
+                    return a + b;
+                case '-':
+                    return a - b;
+                case '*':
+                    return a * b;
+                case '/':
+                    if (b === 0) {
+                        return "0으로 나눌 수 없음";
+                    }
+                    return a / b;
+                default:
+                    return "잘못된 연산자";
+            }
+        }
+        function runCalc() {
+            let a = Number(prompt("첫 번째 숫자 입력:"));
+            let b = Number(prompt("두 번째 숫자 입력:"));
+            let op = prompt("연산자 입력 (+, -, *, /):");
+
+            let result = calc(a, b, op);
+
+            console.log("결과:", result);
+            alert("결과: " + result);
+        }
+        
     </script>
 
 </body>
