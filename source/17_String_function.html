@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let str = "Welcome Seoul";
+    //1. property : lengh
+    console.log(str.length);
+
+    //2. indexOf(대상 문자열, 검색 시작위치) : 문자열을 찾아서 인덱스를 리턴해준다 
+    console.log(str.indexOf("Seoul"));
+    str = "Welcome Seoul Seoul"; //찾고자 하는 문자열을 처음 하나만 찾는다 
+    console.log(str.indexOf("Seoul",10));
+    // -1 : 없는 글자
+    console.log(str.indexOf("Jeju")); // 콘솔에 -1 나옴
+
+    //숙제 
+   // 전화번호 입력시 : 오류
+    </script>
+   
+</body>
+</html>
