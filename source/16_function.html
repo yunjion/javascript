@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <script src="./js/common.js"></script>
+    <!-- <script src="./js/common.js"></script> -->
 
     <script>
         /* 1. 함수 선언식 방식 
@@ -92,8 +92,15 @@
 
             console.log("결과:", result);
             alert("결과: " + result);
+            
         }
+        runCalc();
         
+        //4. function() 생성자 함수
+        const cal2 = new Function("n1,n2", "return n1 + n2");
+        console.log(11,22); 
+        const cal3 = new Function("n1,n2","return n1" + op + "n2");
+        console.log(cal3(11.22));
     </script>
 
 </body>
