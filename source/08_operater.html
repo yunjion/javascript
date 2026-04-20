@@ -41,6 +41,7 @@
         //3. 비교 연산자 : ==, ===, !=, !==
         let a = 3;
         let b = "3";
+        console.log(a == b);
         console.log(a == b); // true = 값만 비교 
         console.log(a === b); // false => 값과 타입 다 비교
         
@@ -51,6 +52,9 @@
         y = 6;
         y = ++x; //증가하고 할당 x++ 할당 하고 증가
         console.log(x); //6
+        console.log(y);
+        y = x++;
+        console.log(x);
         console.log(y); //6
         console.log('--------------------');
 
