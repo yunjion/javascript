@@ -18,9 +18,9 @@
         - 생성하는 순간 속성 (property) 중 length 자동으로 생김 
         */
 
-        // let nums = [1,2,3,4,5];
-        // let str = ["a","b","c"];
-        // let mix = [3,5.6,false,[3,4,5], {name : "공은성"}];
+        let nums = [1,2,3,4,5];
+        let str = ["a","b","c"];
+        let mix = [3,5.6,false,[3,4,5], {name : "공은성"}];
         // console.log(nums.length);
         // console.log(str.length);
         // console.log(mix.length);
@@ -45,11 +45,25 @@
 
         // //pop() 맨 끝에 값 매개변수가 없는 함수 
         // console.log(mix);
+        console.log(mix);
         // console.log(mix.pop());
+        console.log(mix.pop(2));
+        // console.log(mix);
         // console.log(mix);
         // console.log(mix.pop());
+        // console.log(mix.pop());
+        // console.log(mix);
+        // console.log(mix.push(name));
+        // console.log(mix);
         // console.log(mix);
         // console.log(mix.pop());
+        // console.log(mix.pop());
+        // console.log(mix);
+        // mix.push(4.5);
+        // console.log(mix.push());
+        // console.log(mix.push("name"));
+    //    mix.push({name:"공은성"});
+    //    console.log(mix);
         // console.log(mix);
         // mix.push(4.5);
         // console.log(mix);
@@ -57,52 +71,52 @@
         // mix.push({name:"공은성"});
         // console.log(mix)
     
-        /* 활용
-         - object 와 함께 사용
-         - 예를 들어 우리가 개발한 웹사이트에서 사용자 목록을 가져와 처리를 한다고 가정하자 
-         */
+        // /* 활용
+        //  - object 와 함께 사용
+        //  - 예를 들어 우리가 개발한 웹사이트에서 사용자 목록을 가져와 처리를 한다고 가정하자 
+        //  */
 
-         let userList = [{
-            name : "정국",
-            gender : "남자",
-            email : "jung@gmail.com",
-            phone : "000-1111-1111"
-         }
-         ,{
-              name : "뷔",
-            gender : "남자",
-            email : "vui@gmail.com",
-            phone : "000-2222-1111"
+        //  let userList = [{
+        //     name : "정국",
+        //     gender : "남자",
+        //     email : "jung@gmail.com",
+        //     phone : "000-1111-1111"
+        //  }
+        //  ,{
+        //       name : "뷔",
+        //     gender : "남자",
+        //     email : "vui@gmail.com",
+        //     phone : "000-2222-1111"
 
-         },
-         {
-              name : "로제",
-            gender : "여자",
-            email : "rose@gmail.com",
-            phone : "000-3333-1111"
+        //  },
+        //  {
+        //       name : "로제",
+        //     gender : "여자",
+        //     email : "rose@gmail.com",
+        //     phone : "000-3333-1111"
 
-         }]; // 시험 문제 
-         console.log(userList[2].phone);
+        //  }]; // 시험 문제 
+        //  console.log(userList[2].phone);
          
          
 
-         console.log(userList.length);
-         userList[0];
-         console.log(userList[1].name);
+        //  console.log(userList.length);
+        //  userList[0];
+        //  console.log(userList[1].name);
 
 
-        let input = prompt("입력");
-            console.log(input);
+        // let input = prompt("입력");
+        //     console.log(input);
             
-            if(input == "로제의 전화번호") {
-                console.log(userList[2].phone)
+        //     if(input == "로제의 전화번호") {
+        //         console.log(userList[2].phone)
 
-            }if (input == "뷔의 전화번호") {
-                console.log(userList[1].phone)
+        //     }if (input == "뷔의 전화번호") {
+        //         console.log(userList[1].phone)
 
-            } else {
-                console.log(userList[0].phone)
-            };
+        //     } else {
+        //         console.log(userList[0].phone)
+        //     };
             
 
 
