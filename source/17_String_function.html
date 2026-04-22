@@ -8,7 +8,7 @@
 <body>
     <script>
     let str = "Welcome Seoul";
-    //1. property : lengh
+    //1. property : lenght
     console.log(str.length);
         
     //2. indexOf(대상 문자열, 검색 시작위치) : 문자열을 찾아서 인덱스를 리턴해준다 
@@ -19,7 +19,14 @@
     console.log(str.indexOf("Jeju")); // 콘솔에 -1 나옴
 
     //숙제 
-   // 전화번호 입력시 : 오류
+   // 전화번호 입력받고 하이픈이 있다면 오류
+
+   let tel = prompt("전화 번호를 입력하세요");
+    if (tel.indexOf("-") != -1)  {
+    console.log("하이픈을 빼고 입력하세요");
+   }else{
+    console.log(tel);
+   }
     </script>
    
 </body>
