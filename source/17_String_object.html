@@ -10,6 +10,7 @@
       //4. ***slice(시작위치, 종료위치) : 문자열의 시작위치에서 종료위치 -1 까지 잘라내기
       //매개변수에 음수가 올 수 있다.
       //유연하다.
+       let str = "Welcome Seoul"; 
       console.log(str.slice(8, 13)); //Seoul
       console.log(str.slice(8)); //Seoul
       console.log(str.slice(0)); //Welcome Seoul 0부터 끝까지
@@ -47,7 +48,48 @@
          
 
      //7. replace(문자열1, 문자열2) : 문자열1을 문자열2로 교체하는 함수
-        
-    </script>
+     str = "Welcome Jeju! Jeju";
+     console.log(str.replace("Jeju","Seoul")); 
+
+     //과제 => replaceAll 사용하지 말고 Jeju를 서울로 바꾸기 
+     
+     //8. ** toUpperCase() : 대문자로 변환
+     //9. ** toLoweCase() : 소문자로 변환 
+     //exam : 제품 번호 포맷 : 영어대문자 제조년월일 코드  =>  M260422DEF 
+     //m260422DEF m260422def 사용자가 이렇게 입력 받는다면 이런걸 바꿀때 사용
+
+     console.log(str.toUpperCase());
+     console.log(str.toLowerCase());
+
+     //10. concat 문자열 합치기, 문자열의 갯수는 제한이 없다 
+     let firstName = "John";
+     let lastName = "Doe";
+     let fullName = firstName.concat(",",lastName,"!~~","Welcome");
+     console.log(fullName);
+
+     //11. trim() : 문자열 앞, 뒤 공백을 없애기 
+     let name = "           에이스???2학년        3반";
+
+     console.log(name.trim()); //사이 공백은 자르지 않고 양 끝에 공백만 자른다
+
+     //12. *****padStart(문자열 전체 길이, 앞에 채울 문자열) 
+     //현업에서 가장 많이 사용하고 중요하다. => 동일한 내용을 자바스크립트코드로 작성하면 매우 길다.
+     //월을 2자리로 출력 
+    let today = new Date();
+    let month = today.getMonth() + 1;
+
+    if (month < 10) {
+    console.log("0" + month + "월");
+    } else {
+    console.log(month + "월");
+    }
+    //  (+month).length < 2
+
+    //13. *********************** split() 파라미터로 전달받은 문자열을 기준으로 문자열을 쪼갠다.
+    //결과는 배열로 반환된다. 현업에서 가장 많이 사용하고 중요하다 
+
+    
+     
+     </script>
 </body>
 </html>
