@@ -7,31 +7,6 @@
 </head>
 <body>
     <script>
-        let str = "Welcome Seoul";
-      //1.property : length
-      console.log(str.length);
-
-      //2. indexOf(대상 문자열, 검색 시작 위치) : 문자열을 찾아서 그 문자열의 인덱스를 리턴해줌 첫 하나만 => 정규식
-
-      console.log(str.indexOf("Seoul")); //8
-
-      str = "Welcome Seoul Seoul";
-      console.log(str.indexOf("Seoul")); //찾고자 하는 문자열을 처음 하나만 찾고 못찾음 - 8 시작위치
-      console.log(str.indexOf("Seoul", 10)); //14     8보다 높은 숫자
-      console.log(str.indexOf("Jeju")); // -1
-
-      //활용 과제 : 전화번호 입력시 - 있으면 : 오류
-      let tel = "010-0000-0000"; //indexof 없으면 -1반환 하이픈이 있으면 -1반환 없으면 0이상 반환
-      if (tel.indexOf("-") === -1) {
-        console.log(tel);
-      } else {
-        console.log("오류입니다");
-      }
-
-      //3. lastIndexOf : 뒤에서부터 문자열을 찾아 (처음 만나는 것만) 인덱스를 리턴
-      str = "Welcome Seoul";
-      console.log(str.lastIndexOf("l")); //12
-
       //4. ***slice(시작위치, 종료위치) : 문자열의 시작위치에서 종료위치 -1 까지 잘라내기
       //매개변수에 음수가 올 수 있다.
       //유연하다.
@@ -70,7 +45,9 @@
          substring : slice와 유사하지만 인덱스가 음수인 경우 처리가 다르다
          substr : 인덱스가 아닌 글자 수를 기준으로 하지만 현재 웹표준으로 권장하지 않는다. */
          
-         //7. replace(문자열1, 문자열2) : 문자열1을 문자열2로 교체하는 함수
+
+     //7. replace(문자열1, 문자열2) : 문자열1을 문자열2로 교체하는 함수
+        
     </script>
 </body>
 </html>
