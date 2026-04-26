@@ -21,7 +21,7 @@
       //              -5-4-3-2-1
       console.log(str.slice(-5)); //뒤에서부터 5번째부터 끝까지 잘라내라는말   Seoul
       console.log(str.slice(-8, -3)); //me Se -8~ -4
-
+    
       //5.substring(시작위치, 종료위치) : 문자열의 시작위치에서 종료위치 -1까지 잘라내기
       //매개변수에 음수가 나오면 0으로 간주
       //오동작 가능성 => 오류가 발생 X
@@ -52,7 +52,12 @@
      console.log(str.replace("Jeju","Seoul")); 
 
      //과제 => replaceAll 사용하지 말고 Jeju를 서울로 바꾸기 
-     
+     str = "Welcome Jeju! Jeju";
+        while (str.indexOf("Jeju") !== -1) {
+        str = str.replace("Jeju", "Seoul");
+        }
+
+        console.log(str);
      //8. ** toUpperCase() : 대문자로 변환
      //9. ** toLoweCase() : 소문자로 변환 
      //exam : 제품 번호 포맷 : 영어대문자 제조년월일 코드  =>  M260422DEF 
@@ -75,14 +80,20 @@
      //12. *****padStart(문자열 전체 길이, 앞에 채울 문자열) 
      //현업에서 가장 많이 사용하고 중요하다. => 동일한 내용을 자바스크립트코드로 작성하면 매우 길다.
      //월을 2자리로 출력 
+    //let today = new Date();
+    //let month = today.getMonth() + 1;
+
+    // if (month < 10) {
+    // console.log("0" + month + "월");
+    // } else {
+    // console.log(month + "월");
+    // }
+    //padStart 사용 
     let today = new Date();
     let month = today.getMonth() + 1;
 
-    if (month < 10) {
-    console.log("0" + month + "월");
-    } else {
-    console.log(month + "월");
-    }
+    let result1 = String(month).padStart(2, "0");
+    console.log(result + "월");
     //  (+month).length < 2
 
     //13. *********************** split() 파라미터로 전달받은 문자열을 기준으로 문자열을 쪼갠다.
