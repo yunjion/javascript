@@ -93,16 +93,24 @@
     let month = today.getMonth() + 1;
 
     let result1 = String(month).padStart(2, "0");
-    console.log(result + "월");
+    console.log(result1 + "월");
     //  (+month).length < 2
+    
+    //13. padEnd(문자열 전체 길이, 뒤에 채울 문자열)
+    let stN = "2318";
+    //학생일 경우 한번 뒤에 "s"를 붙이자
+    console.log(stN.padEnd(5,"s"));
+    
+    //14.***charAt(인덱스) : 인덱스에 해당하는 한 글자만 가져온다  
 
-    //13. *********************** split() 파라미터로 전달받은 문자열을 기준으로 문자열을 쪼갠다.
+    //1. *********************** split() 파라미터로 전달받은 문자열을 기준으로 문자열을 쪼갠다.
     //결과는 배열로 반환된다. 현업에서 가장 많이 사용하고 중요하다 
     let jsonEx = "john@gmail.com, lee@gmail.com, kim@hanmail.com";
     let result = jsonEx.split(",");
     console.log(result);
     
-     
+
+    
      </script>
 </body>
 </html>
