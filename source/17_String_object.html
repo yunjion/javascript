@@ -101,14 +101,42 @@
     //학생일 경우 한번 뒤에 "s"를 붙이자
     console.log(stN.padEnd(5,"s"));
     
-    //14.***charAt(인덱스) : 인덱스에 해당하는 한 글자만 가져온다  
+    //14.***charAt(인덱스) : 인덱스에 해당하는 한 글자만 가져온다 
+     stN = "s2318";
+     if(stN.charAt(0).toLowerCase() === "s") {
+        console.log("학생입니다");
+     }
 
-    //1. *********************** split() 파라미터로 전달받은 문자열을 기준으로 문자열을 쪼갠다.
+     //15.  charCodeAt(인덱스) : 안덱스에 해당하는 글자의 유니코드를 리턴
+    stN = "A";
+    console.log(stN.charCodeAt(0));
+
+    stN = "가힣";
+    console.log(stN.charCodeAt(0));
+    console.log(stN.charCodeAt(1));
+
+
+    //16. *********************** split() 파라미터로 전달받은 문자열을 기준으로 문자열을 쪼갠다.
     //결과는 배열로 반환된다. 현업에서 가장 많이 사용하고 중요하다 
+    //데이터 전송시 문자열(json)전송
     let jsonEx = "john@gmail.com, lee@gmail.com, kim@hanmail.com";
     let result = jsonEx.split(",");
     console.log(result);
+
+    //17. ***startsWith() : 파라미터로 시작하는지 여부를 boolean으로 리턴 
+    //https:// 여부에 따라 유효한지 여부를 출력 
+    let url = "website.com";
     
+    if(url === url.startsWith("https://")){
+        console.log("유효");
+    }else{
+        console.log("유효하지 않음");
+    }
+    //18. ***endWith() : 파라미터로 끝나는지 여부를 boolean으로 리턴 
+    console.log(url.endsWith("com")); //true
+        if(url.endsWith("com")) {
+        console.log("회사입니다");
+    }
 
     
      </script>
