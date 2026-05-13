@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      //4. slice() 실무활용 예제
+      //4-1. 긴 문자열을 일부만 잘라서 보여주고 나머지는 "..." 처리시 
+      const longString = "2박3일 일정으로 중국을 방문 예정 중인 트럼프 대통령은 시진핑 주석과 만나 이란과 관련해 긴 대화를 나눌 것이지만, 도움은 필요없다고 이야기했습니다.";
+      const truncateTitle = (title,maxLength) => {
+        if(title.length > maxLength) {
+            return title.slice(0,maxLength)+"...."
+        }else {
+            return title;
+        }
+      };
+      console.log(truncateTitle(longString,15));
+
+      //4-2 마스킹 : 개인 정보를 안 보이게 처리
+      let phoneNumber = "010-1234-5678";
+      let hiddenNumber = "";
+      hiddenNumber = phoneNumber.slice(0,-4) + "****";
+      console.log(hiddenNumber); //010-1234-****
+
+      //7. replace() 실무활용 예제(with 정규식 (regular expression))
+      //회원가입시 전번 010-1111-2222 형식으로 입력 => db에 저장시 01011112222
+      /* 정규식 (regular expression) : 특정한 포맷을 만들어 내는 식
+      - / / 사이에 작성 
+      - D : 숫자
+      - \ not
+      - 옵션 : g=> 모두(all) i => 대소문자를 구분하지 않는다.  
+      */
+      phoneNumber = "010-1234-5678";
+      const Numberreplace = (number) => {
+        return number.replace(/-/g, ""); // (/\D/g,"") 숫자가 아닌거 
+        }
+      console.log(Numberreplace(phoneNumber));
+
+      let str = "Welcome Jeju jeju";
+      console.log(str.replace(/Jeju/gi,"Seoul"));
+      
+      //12. padStart() 실무 활용 예제
+      //14. charAt() 실무 활용 예제
+      //16. split() 실무 활용 예제
+      //18. endsWith() 실무 활용 예제 
+    </script>
+</body>
+</html>
