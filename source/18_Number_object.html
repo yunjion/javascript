@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Number 
+        let num = 23432;
+        console.log(num); //파란색 숫자
+         
+        //1. toString() : 숫자를 문자열로 
+        let strNum = num.toString();
+        console.log(strNum); //검정색 문자열
+
+        //2. 문자열을 정수로 : parseInt() =>  전역함수(주인 = window)
+       // window.parseInt(strNum); //window 생략 가능
+        console.log(parseInt(strNum)); 
+        
+        num = 123.45;
+        //3. 문자열을 실수로 : parseFloat() => 전역함수(주인 = window)
+        console.log(parseFloat(num));
+
+        let num2 = parseFloat(num);
+        //4. 소수점 이하 자리 표현 방법 : toFixed() 
+        console.log(num2.toFixed(0));
+    </script>
+</body>
+</html>l
