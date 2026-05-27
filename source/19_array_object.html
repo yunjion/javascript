@@ -5,6 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            color: #333;
+            margin: 24px;
+        }
+
+        table {
+            width: min(100%, 620px);
+            border-collapse: collapse;
+            margin: 0 auto;
+            background: #ffffff;
+        }
+
+        thead th {
+            background: #e2e2e2;
+            color: #333;
+            padding: 12px 14px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 1px solid #d4d4d4;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f7f7f7;
+        }
+
+        tbody td {
+            padding: 12px 14px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -38,18 +75,8 @@
 
         </tbody>
     </table>
-    <!-- <table>
-        <tr>
-            <th scope="col">학번</th>
-            <th scope="col">이름</th>
-            <th scope="col">벌점</th>
-        </tr>
-        <tr>
-            <td>2317</td>
-            <td>홍성재</td>
-            <td>8</td>
-        </tr>
-    </table> -->
+
+
     <script>
         //자바스크립트에서 가장 많이 사용하며 실무에서 중요도가 높은 객체
         let brands = ["구글", "애플", "아마존", "삼성", "하이닉스", "마이크로소프트"];
