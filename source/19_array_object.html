@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th>학번</th>
+            <th>이름</th>
+            <th>벌점</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2317</td>
+                <td>홍성재</td>
+                <td>8</td>
+            </tr>
+             <tr>
+                <td>2306</td>
+                <td>박주혁</td>
+                <td>2</td>
+            </tr>
+             <tr>
+                <td>2305</td>
+                <td>민서연</td>
+                <td>1</td>
+            </tr>
+              <tr>
+                <td>2312</td>
+                <td>이담현</td>
+                <td>2</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <!-- <table>
+        <tr>
+            <th scope="col">학번</th>
+            <th scope="col">이름</th>
+            <th scope="col">벌점</th>
+        </tr>
+        <tr>
+            <td>2317</td>
+            <td>홍성재</td>
+            <td>8</td>
+        </tr>
+    </table> -->
+    <script>
+        //자바스크립트에서 가장 많이 사용하며 실무에서 중요도가 높은 객체
+        let brands = ["구글", "애플", "아마존", "삼성", "하이닉스", "마이크로소프트"];
+
+        //1.toString() : 배열요소를 하나의 문자열(,)로 합치기
+        console.log(brands.toString());
+
+        //2.*****join() : 파라미터로 전달된 문자를 이용해서 하나의 문자열로 합치기 
+        console.log(brands.join(""));
+        console.log(brands.join("/"));
+
+        //2-1. join()실무 활용 : db에서 데이터를 읽어와 동적으로 표를 만들어 화면에 출력 
+
+
+
+    </script>
+</body>
+
+</html>
