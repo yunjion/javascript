@@ -27,6 +27,7 @@
             text-align: left;
             font-weight: 600;
             border-bottom: 1px solid #d4d4d4;
+            text-align: center;
         }
 
         tbody tr:nth-child(even) {
@@ -36,6 +37,7 @@
         tbody td {
             padding: 12px 14px;
             border-bottom: 1px solid #e8e8e8;
+            text-align: center;
         }
 
         tbody tr:last-child td {
@@ -45,7 +47,8 @@
 </head>
 
 <body>
-    <button onclick = "doSeach1()">조회</button>
+    <button onclick="doSeach1()">조회1</button>
+    <button onclick="doSeach2()">조회2</button>
     <table>
         <thead>
             <th>학번</th>
@@ -58,17 +61,17 @@
                 <td>홍성재</td>
                 <td>8</td>
             </tr>
-             <tr>
+            <tr>
                 <td>2306</td>
                 <td>박주혁</td>
                 <td>2</td>
             </tr>
-             <tr>
+            <tr>
                 <td>2305</td>
                 <td>민서연</td>
                 <td>1</td>
             </tr>
-              <tr>
+            <tr>
                 <td>2312</td>
                 <td>이담현</td>
                 <td>2</td>
@@ -76,7 +79,13 @@
 
         </tbody>
     </table>
-
+    <table>
+        <thead>
+            <th>음료</th>
+            <th>가격</th>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
 
     <script>
         //자바스크립트에서 가장 많이 사용하며 실무에서 중요도가 높은 객체
@@ -91,7 +100,48 @@
 
         //2-1. join()실무 활용 : db에서 데이터를 읽어와 동적으로 표를 만들어 화면에 출력 
 
+        //+= (문자열) : 장점 : 단점 : 데이터 수가 많으면 performance 낮아짐 
+        const doSeach1 = () => {
+            //1. db에서 데이터 읽어오기 
+            const drinkList = [
+                { name: "오렌지", price: 1000 },
+                { name: "파워 에이드", price: 1200 },
+                { name: "커피", price: 700 },
+                { name: "보리음료", price: 1200 },
+                { name: "코카콜라", price: 1800 },
+            ];
 
+            let trTags = "";
+            for (drink of drinkList) {
+                trTags += "<tr>";
+                trTags += "<td>" + drink.name + "</td>";
+                trTags += "<td>" + drink.price + "</td>";
+                trTags += "</tr>";
+
+            }
+            console.log(trTags);
+            document.getElementById("tbody").innerHTML = trTags;
+        };
+
+        //2.데이터 갯수 만큼 렌더링해서 출력 
+         const doSeach2 = () => {
+            //1. db에서 데이터 읽어오기 
+            const drinkList = [
+                { name: "오렌지", price: 1000 },
+                { name: "파워 에이드", price: 1200 },
+                { name: "커피", price: 700 },
+                { name: "보리음료", price: 1200 },
+                { name: "코카콜라", price: 1800 },
+            ];
+
+            let trTags = [];
+            for (drink of drinkList) {
+                trTags.push(drink);
+                
+            }
+         
+            document.getElementById("tbody").innerHTML = trTags.join("");
+        };
 
     </script>
 </body>
