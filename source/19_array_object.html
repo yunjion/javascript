@@ -183,16 +183,18 @@
                 {text : "이온음료", code : "ion"},
                 {text : "카페", code : "coffee"},
                 {text : "라떼", code : "late"},
-            ]
-        
+            ];
+       
           let tags = [];
           for(drink of drinks) {
             
             tags.push("coption value" + drink.code + ">" + drink.text | "</option>");
-          }
+          } 
+          //drinks.unshift({});
           return tags; //태그가 들어있는 배열 
         };
         const selDrink = loadDrinkType();
+        selDrink.unshift();
         document.getElementById("selDrinkType").innerHTML = selDrink.join("");
 
         
