@@ -283,11 +283,24 @@
     const ascPrice = drinkList.sort((a, b) => a.price - b.price);
     console.log(ascPrice);
 
-    const descName = drinkList.sort((a,b) => {
-        return b.name - a.name;
-    }); 
+    const descName = drinkList.sort((a, b) => {
+    return b.name.localeCompare(a.name);
+    });
+
     console.log(descName);
-    
+
+    const sortAsc = (key) => {
+    return drinkList.sort((a, b) => {
+        if (typeof a[key] === "string") {
+            return a[key].localeCompare(b[key]);
+        }
+            return a[key] - b[key];
+        });
+    };
+
+    console.log(sortAsc("name"));   // 이름 오름차순
+    console.log(sortAsc("price"));  // 가격 오름차순
+        
 
     </script>
 </body>
