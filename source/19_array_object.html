@@ -260,7 +260,7 @@
     if(a < b)
     return 1;//양수이면 자리를 바꾼다
     else if (a > b )return -1;
-    else 0; // 순서를 바꾸지 않는다 
+    else return 0; // 순서를 바꾸지 않는다 
     });
     console.log(ascPoints);
 
@@ -286,24 +286,44 @@
     const descName = drinkList.sort((a, b) => {
     return b.name.localeCompare(a.name);
     });
-
     console.log(descName);
 
-    const sortAsc = (key) => {
-    return drinkList.sort((a, b) => {
-        if (typeof a[key] === "string") {
-            return a[key].localeCompare(b[key]);
-        }
-            return a[key] - b[key];
-        });
-    };
-
-    console.log(sortAsc("name"));   // 이름 오름차순
-    console.log(sortAsc("price"));  // 가격 오름차순
+    // let userInput = prompt();
+    // const sortAsc = drinkList.sort((a,b) => {
+    //     if(a[userInput] > b[userInput])return 1;//양수이면 자리를 바꾼다
+    //     else if (a[userInput] < b[userInput] )return -1;
+    //     else return 0; // 순서를 바꾸지 않는다 
+    //     });
+    // console.log(sortAsc);
     
-    
+    //가격 내림차순 
+    let products = [
+        {id: 1, name: "맥분 프로", category : 'electronics', price: 2500000},
+        {id: 2, name: "아이패드 에어", category : 'electronics', price: 9000000},
+        {id: 3, name: "기계식 키보드", category : 'accessories', price: 1500000},
+        {id: 4, name: "허브 매트", category : 'accessories', price: 30000},
 
+    ];
+
+    const productsAsc = products.sort((a,b) => {
+        if(a["price"] > b["price"])
+        return 1;//양수이면 자리를 바꾼다
+        else if (a["price"] < b["price"] )return -1;
+        else return 0; // 순서를 바꾸지 않는다 
+    }); 
+    console.log(productsAsc)
+    
+    //11. ******************************************
+    /* filter() : 배열에서 조건에 맞는 요소만 리턴 , 새로운 배열로 리턴 , 원래 배열은 그대로
+    const 결과배열 = 원배열.fileter((요소) => {
+    });
+    */
+
+    //10만원 이상인 물건 추출 
+    const overMillion = products.filter((item) =>{
+        return item.price >= 100000;
+    });
+    console.log(overMillion);
     </script>
 </body>
-
 </html>
