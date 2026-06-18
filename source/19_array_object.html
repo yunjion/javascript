@@ -1,234 +1,239 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #fafafa;
-            color: #333;
-            margin: 24px;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #fafafa;
+        color: #333;
+        margin: 24px;
+      }
 
-        table {
-            width: min(100%, 620px);
-            border-collapse: collapse;
-            margin: 0 auto;
-            background: #ffffff;
-        }
+      table {
+        width: min(100%, 620px);
+        border-collapse: collapse;
+        margin: 0 auto;
+        background: #ffffff;
+      }
 
-        thead th {
-            background: #e2e2e2;
-            color: #333;
-            padding: 12px 14px;
-            text-align: left;
-            font-weight: 600;
-            border-bottom: 1px solid #d4d4d4;
-            text-align: center;
-        }
+      thead th {
+        background: #e2e2e2;
+        color: #333;
+        padding: 12px 14px;
+        text-align: left;
+        font-weight: 600;
+        border-bottom: 1px solid #d4d4d4;
+        text-align: center;
+      }
 
-        tbody tr:nth-child(even) {
-            background: #f7f7f7;
-        }
+      tbody tr:nth-child(even) {
+        background: #f7f7f7;
+      }
 
-        tbody td {
-            padding: 12px 14px;
-            border-bottom: 1px solid #e8e8e8;
-            text-align: center;
-        }
+      tbody td {
+        padding: 12px 14px;
+        border-bottom: 1px solid #e8e8e8;
+        text-align: center;
+      }
 
-        tbody tr:last-child td {
-            border-bottom: none;
-        }
+      tbody tr:last-child td {
+        border-bottom: none;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-    <select id = "selDrinkType">
-        <option value="coke">콜라</option>
-        <option value="sprite">사이다</option>
-        <option value="fanta">환타</option>
+  <body>
+    <select id="selDrinkType">
+      <option value="coke">콜라</option>
+      <option value="sprite">사이다</option>
+      <option value="fanta">환타</option>
     </select>
-    <select id = "selDrinkType2">
-        <option value="coke">콜라</option>
-        <option value="sprite">사이다</option>
-        <option value="fanta">환타</option>
+    <select id="selDrinkType2">
+      <option value="coke">콜라</option>
+      <option value="sprite">사이다</option>
+      <option value="fanta">환타</option>
     </select>
     <button onclick="doSeach1()">조회1</button>
     <button onclick="doSeach2()">조회2</button>
     <table>
-        <thead>
-            <th>학번</th>
-            <th>이름</th>
-            <th>벌점</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>2317</td>
-                <td>홍성재</td>
-                <td>8</td>
-            </tr>
-            <tr>
-                <td>2306</td>
-                <td>박주혁</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>2305</td>
-                <td>민서연</td>
-                <td>1</td>
-            </tr>
-            <tr>
-                <td>2312</td>
-                <td>이담현</td>
-                <td>2</td>
-            </tr>
-
-        </tbody>
+      <thead>
+        <th>학번</th>
+        <th>이름</th>
+        <th>벌점</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2317</td>
+          <td>홍성재</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>2306</td>
+          <td>박주혁</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>2305</td>
+          <td>민서연</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>2312</td>
+          <td>이담현</td>
+          <td>2</td>
+        </tr>
+      </tbody>
     </table>
     <table>
-        <thead>
-            <th>음료</th>
-            <th>가격</th>
-        </thead>
-        <tbody id="tbody"></tbody>
+      <thead>
+        <th>음료</th>
+        <th>가격</th>
+      </thead>
+      <tbody id="tbody"></tbody>
     </table>
 
     <script>
-    // 자바스크립트에서 가장 많이 사용하며 실무에서 중요도가 높은 객체
-    let brands = ["구글", "애플", "아마존", "삼성", "하이닉스", "마이크로소프트"];
+      // 자바스크립트에서 가장 많이 사용하며 실무에서 중요도가 높은 객체
+      let brands = [
+        "구글",
+        "애플",
+        "아마존",
+        "삼성",
+        "하이닉스",
+        "마이크로소프트",
+      ];
 
-    // 1.toString() : 배열요소를 하나의 문자열(,)로 합치기
-    console.log(brands.toString());
+      // 1.toString() : 배열요소를 하나의 문자열(,)로 합치기
+      console.log(brands.toString());
 
-    // 2.*****join() : 파라미터로 전달된 문자를 이용해서 하나의 문자열로 합치기 
-    console.log(brands.join(""));
-    console.log(brands.join("/"));
+      // 2.*****join() : 파라미터로 전달된 문자를 이용해서 하나의 문자열로 합치기
+      console.log(brands.join(""));
+      console.log(brands.join("/"));
 
-    // 2-1. join()실무 활용 : 문자열 더하기 방식(+=)
-    const doSeach1 = () => {
+      // 2-1. join()실무 활용 : 문자열 더하기 방식(+=)
+      const doSeach1 = () => {
         const drinkList = [
-            { name: "오렌지", price: 1000 },
-            { name: "파워 에이드", price: 1200 },
-            { name: "커피", price: 700 },
-            { name: "보리음료", price: 1200 },
-            { name: "코카콜라", price: 1800 },
+          { name: "오렌지", price: 1000 },
+          { name: "파워 에이드", price: 1200 },
+          { name: "커피", price: 700 },
+          { name: "보리음료", price: 1200 },
+          { name: "코카콜라", price: 1800 },
         ];
-
-        let trTags = "";
-        for (let drink of drinkList) {
-            trTags += `<tr><td>${drink.name}</td><td>${drink.price}</td></tr>`;
+        let trTags = [];
+        for (drink of drinkList) {
+          trTags.push(
+            "<tr><td>" + drink.name + "</td><td>" + drink.price + "</td></tr>",
+          );
         }
-        document.getElementById("tbody").innerHTML = trTags;
-    };
+        document.getElementById("tbody").innerHTML = trTags.join("");
+      };
 
-    // 2-2. join()실무 활용 : 배열 push + join 방식 (성능 우수! 👍)
-    const doSeach2 = () => {
+      // 2-2. join()실무 활용 : 배열 push + join 방식 (성능 우수! 👍)
+      const doSeach2 = () => {
         const drinkList = [
-            { name: "오렌지", price: 1000 },
-            { name: "파워 에이드", price: 1200 },
-            { name: "커피", price: 700 },
-            { name: "보리음료", price: 1200 },
-            { name: "코카콜라", price: 1800 },
+          { name: "오렌지", price: 1000 },
+          { name: "파워 에이드", price: 1200 },
+          { name: "커피", price: 700 },
+          { name: "보리음료", price: 1200 },
+          { name: "코카콜라", price: 1800 },
         ];
 
         let trTags = [];
         for (let drink of drinkList) {
-            // ⚠️ 단순 객체가 아닌, HTML 태그 문자열로 변환해서 push 해야 합니다!
-            trTags.push(`<tr><td>${drink.name}</td><td>${drink.price}</td></tr>`);
+          // ⚠️ 단순 객체가 아닌, HTML 태그 문자열로 변환해서 push 해야 합니다!
+          trTags.push(`<tr><td>${drink.name}</td><td>${drink.price}</td></tr>`);
         }
         document.getElementById("tbody").innerHTML = trTags.join("");
-    };
+      };
 
-    // 배열 메서드 연습 구역
-    brands = ["구글", "애플", "아마존", "삼성", "하이닉스", "마이크로소프트"];
-    console.log(brands.pop());
-    console.log(brands.push("테슬라"));
-    console.log(brands.shift());
-    console.log(brands.unshift("쿠팡"));
+      // 배열 메서드 연습 구역
+      brands = ["구글", "애플", "아마존", "삼성", "하이닉스", "마이크로소프트"];
+      console.log(brands.pop());
+      console.log(brands.push("테슬라"));
+      console.log(brands.shift());
+      console.log(brands.unshift("쿠팡"));
 
-
-    // [첫 번째 Select 박스 설정 함수]
-    const loadDrinkType = () => {
+      // [첫 번째 Select 박스 설정 함수]
+      const loadDrinkType = () => {
         const drinks = [
-            {text : "이온음료", code : "ion"},
-            {text : "카페", code : "coffee"},
-            {text : "라떼", code : "late"},
-        ];
-
-        let tags = [];
-        for(let drink of drinks) {
-            // 오타와 연산자 오류 수정 완료!
-            tags.push(`<option value="${drink.code}">${drink.text}</option>`);
-        } 
-        return tags; 
-    };
-    const selDrink1 = loadDrinkType(); // 이름을 명확하게 selDrink1로 지정
-    document.getElementById("selDrinkType").innerHTML = selDrink1.join("");
-
-
-    // [두 번째 Select 박스 설정 함수 - '전체' 추가 기능 포함]
-    const loadDrinkType2 = (plus) => {
-        const drinks = [
-            {text : "이온음료", code : "ion"},
-            {text : "카페", code : "coffee"},
-            {text : "라떼", code : "late"},
+          { text: "이온음료", code: "ion" },
+          { text: "카페", code: "coffee" },
+          { text: "라떼", code: "late" },
         ];
 
         let tags = [];
         for (let drink of drinks) {
-            tags.push(`<option value="${drink.code}">${drink.text}</option>`);
+          // 오타와 연산자 오류 수정 완료!
+          tags.push(`<option value="${drink.code}">${drink.text}</option>`);
         }
-        
-        if(plus) {
-            tags.unshift(`<option value="${plus.code}">${plus.text}</option>`);
+        return tags;
+      };
+      const selDrink1 = loadDrinkType(); // 이름을 명확하게 selDrink1로 지정
+      document.getElementById("selDrinkType").innerHTML = selDrink1.join("");
+
+      // [두 번째 Select 박스 설정 함수 - '전체' 추가 기능 포함]
+      const loadDrinkType2 = (plus) => {
+        const drinks = [
+          { text: "이온음료", code: "ion" },
+          { text: "카페", code: "coffee" },
+          { text: "라떼", code: "late" },
+        ];
+
+        let tags = [];
+        for (let drink of drinks) {
+          tags.push(`<option value="${drink.code}">${drink.text}</option>`);
         }
-        
-        return tags; 
-    };
-    const selDrink2 = loadDrinkType2({text: "전체", code : "all"}); // 이름을 selDrink2로 지정
-    document.getElementById("selDrinkType2").innerHTML = selDrink2.join("");
+        if (plus) {
+          tags.unshift(
+            "<option value=" + plus.text + ">" + plus.code + "</option value?>",
+          );
+        }
+        return tags;
+      };
+      const selDrink2 = loadDrinkType({ text: "전체", code: "all" });
+      // 이름을 selDrink2로 지정
+      document.getElementById("selDrinkType2").innerHTML = selDrink2.join("");
 
-    //7. splice(p1, p2, p4) : 원하는 위치에 특정 요소르 추가하거나 제거 
-    //p1 : 원하는 위치 
-    //p2 : 삭제할 갯수
-    //p3 : 추가할 요소 
-    brands = ["구글", "애플", "아마존", "삼성", "하이닉스", "마이크로소프트"];
-    console.log(brands.splice(1,0,"테슬라"));
-    console.log(brands);
-    console.log(brands.splice(3,1,""));
-    console.log(brands);
+      //7. splice(p1, p2, p4) : 원하는 위치에 특정 요소르 추가하거나 제거
+      //p1 : 원하는 위치
+      //p2 : 삭제할 갯수
+      //p3 : 추가할 요소
+      brands = ["구글", "애플", "아마존", "삼성", "하이닉스", "마이크로소프트"];
+      console.log(brands.splice(1, 0, "테슬라"));
+      console.log(brands);
+      console.log(brands.splice(3, 1, ""));
+      console.log(brands);
 
-    console.log(brands.splice(brands.indexOf("애플"),0,"아마존"));
-    console.log(brands);
+      console.log(brands.splice(brands.indexOf("애플"), 0, "아마존"));
+      console.log(brands);
 
-    //8. concat() : 배열으 합치기 (갯수 제한 없음)
-    let arr1 = ["공은성","김세주"];
-    let arr2 = ["최명준","홍성재"];
-    let arr3 = ["신수아","윤지온"];
+      //8. concat() : 배열으 합치기 (갯수 제한 없음)
+      let arr1 = ["공은성", "김세주"];
+      let arr2 = ["최명준", "홍성재"];
+      let arr3 = ["신수아", "윤지온"];
 
-    let  arr4 = arr1.concat(arr2);
-    console.log(arr4);
+      let arr4 = arr1.concat(arr2);
+      console.log(arr4);
 
-    let arr5 = arr1.concat(arr2, arr3);
-    console.log(arr5);
+      let arr5 = arr1.concat(arr2, arr3);
+      console.log(arr5);
 
-    //******* spread operator (전개 연산자) ********
-    //...3개여야함 이상으로 하면 오류 남 
-    let arr6 = [...arr1, ...arr2, ...arr3];
-    console.log(arr6);
+      //******* spread operator (전개 연산자) ********
+      //...3개여야함 이상으로 하면 오류 남
+      let arr6 = [...arr1, ...arr2, ...arr3];
+      console.log(arr6);
 
-    //9. slice(start,end) : end : end-1 까지 잘라내기 => 배열로 리턴 
-    const newBrands = brands.slice(0,4);
-    
-    console.log(newBrands);
-    console.log(brands);
+      //9. slice(start,end) : end : end-1 까지 잘라내기 => 배열로 리턴
+      const newBrands = brands.slice(0, 4);
 
-    //10. ******************sort()******************
-    /* - 문자열 오름차순이 기본 
+      console.log(newBrands);
+      console.log(brands);
+
+      //10. ******************sort()******************
+      /* - 문자열 오름차순이 기본 
         - 숫자에 대해서 별도의 알고리즘이 필요
         자바스크립트의 비교 함수의 동작원리 => 엔진이 내부적으로 알고리즘
         (크롬의 경우 TimSort(알고리즘) 을 갖고 있으며 함수를 매개변수로 사용한다. 
@@ -241,94 +246,100 @@
         else 0; // 순서를 바꾸지 않는다 
         )};
     */
-    console.log(brands.sort());
-    console.log(arr5.sort());
+      console.log(brands.sort());
+      console.log(arr5.sort());
 
-    let point = [100,98,89,95,76,64];
-    console.log(point.sort());
-    
-    //오름차순 
-    const newPoints = point.sort((a,b) => {
-        if(a > b)
-        return 1;//양수이면 자리를 바꾼다
-        else if (a < b )return -1;
-        else 0; // 순서를 바꾸지 않는다 
-        });
-    console.log(newPoints);
-    //내림차순
-    const ascPoints = point.sort((a,b) => {
-    if(a < b)
-    return 1;//양수이면 자리를 바꾼다
-    else if (a > b )return -1;
-    else return 0; // 순서를 바꾸지 않는다 
-    });
-    console.log(ascPoints);
+      let point = [100, 98, 89, 95, 76, 64];
+      console.log(point.sort());
 
-    const descPoints = point.sort((a,b) => {
-        return b-a; 
-    });
-    console.log(descPoints);
+      //오름차순
+      const newPoints = point.sort((a, b) => {
+        if (a > b)
+          return 1; //양수이면 자리를 바꾼다
+        else if (a < b) return -1;
+        else 0; // 순서를 바꾸지 않는다
+      });
+      console.log(newPoints);
+      //내림차순
+      const ascPoints = point.sort((a, b) => {
+        if (a < b)
+          return 1; //양수이면 자리를 바꾼다
+        else if (a > b) return -1;
+        else return 0; // 순서를 바꾸지 않는다
+      });
+      console.log(ascPoints);
 
-        const drinkList = [
+      const descPoints = point.sort((a, b) => {
+        return b - a;
+      });
+      console.log(descPoints);
+
+      const drinkList = [
         { name: "오렌지", price: 1000 },
         { name: "파워 에이드", price: 1200 },
         { name: "커피", price: 700 },
         { name: "보리음료", price: 1200 },
         { name: "코카콜라", price: 1800 },
-    ];
-    //1.가격 오름차순 정렬 => comment 
-    //2.이름 내림차순 정렬 => comment
-    //3.키(기준)이름받아 오름차순 정렬
+      ];
+      //1.가격 오름차순 정렬 => comment
+      //2.이름 내림차순 정렬 => comment
+      //3.키(기준)이름받아 오름차순 정렬
 
-    const ascPrice = drinkList.sort((a, b) => a.price - b.price);
-    console.log(ascPrice);
+      const ascPrice = drinkList.sort((a, b) => a.price - b.price);
+      console.log(ascPrice);
 
-    const descName = drinkList.sort((a, b) => {
-    return b.name.localeCompare(a.name);
-    });
-    console.log(descName);
+      const descName = drinkList.sort((a, b) => {
+        return b.name.localeCompare(a.name);
+      });
+      console.log(descName);
 
-    // let userInput = prompt();
-    // const sortAsc = drinkList.sort((a,b) => {
-    //     if(a[userInput] > b[userInput])return 1;//양수이면 자리를 바꾼다
-    //     else if (a[userInput] < b[userInput] )return -1;
-    //     else return 0; // 순서를 바꾸지 않는다 
-    //     });
-    // console.log(sortAsc);
-    
-    //가격 내림차순 
-    let products = [
-        {id: 1, name: "맥분 프로", category : 'electronics', price: 2500000},
-        {id: 2, name: "아이패드 에어", category : 'electronics', price: 9000000},
-        {id: 3, name: "기계식 키보드", category : 'accessories', price: 1500000},
-        {id: 4, name: "허브 매트", category : 'accessories', price: 30000},
+      // let userInput = prompt();
+      // const sortAsc = drinkList.sort((a,b) => {
+      //     if(a[userInput] > b[userInput])return 1;//양수이면 자리를 바꾼다
+      //     else if (a[userInput] < b[userInput] )return -1;
+      //     else return 0; // 순서를 바꾸지 않는다
+      //     });
+      // console.log(sortAsc);
 
-    ];
+      //가격 내림차순
+      let products = [
+        { id: 1, name: "맥분 프로", category: "electronics", price: 2500000 },
+        {
+          id: 2,
+          name: "아이패드 에어",
+          category: "electronics",
+          price: 9000000,
+        },
+        {
+          id: 3,
+          name: "기계식 키보드",
+          category: "accessories",
+          price: 1500000,
+        },
+        { id: 4, name: "허브 매트", category: "accessories", price: 30000 },
+      ];
 
-    const productsAsc = products.sort((a,b) => {
-        if(a["price"] > b["price"])
-        return 1;//양수이면 자리를 바꾼다
-        else if (a["price"] < b["price"] )return -1;
-        else return 0; // 순서를 바꾸지 않는다 
-    }); 
-    console.log(productsAsc)
-    
-    //11. ******************************************
-    /* filter() : 배열에서 조건에 맞는 요소만 리턴 , 새로운 배열로 리턴 , 원래 배열은 그대로
+      const productsAsc = products.sort((a, b) => {
+        if (a["price"] > b["price"])
+          return 1; //양수이면 자리를 바꾼다
+        else if (a["price"] < b["price"]) return -1;
+        else return 0; // 순서를 바꾸지 않는다
+      });
+      //11. ******************************************
+      /* filter() : 배열에서 조건에 맞는 요소만 리턴 , 새로운 배열로 리턴 , 원래 배열은 그대로
     const 결과배열 = 원배열.fileter((요소) => {
     });
     */
 
-    //10만원 이상인 물건 추출 
-    const overMillion = products.filter((item) =>{
+      //10만원 이상인 물건 추출
+      const overMillion = products.filter((item) => {
         return item.price >= 100000;
-    });
-    console.log(overMillion);
+      });
+      console.log(overMillion);
 
-    //1. 카테고리가 악세서리 인거 골라오기
-    //2. 가격이 10만원 이하 인거골라오기 
-    //3. 카테고리가 악세서리이면서 가격이 10만원 이하 
-
+      //1. 카테고리가 악세서리 인거 골라오기
+      //2. 가격이 10만원 이하 인거골라오기
+      //3. 카테고리가 악세서리이면서 가격이 10만원 이하
     </script>
-</body>
+  </body>
 </html>
