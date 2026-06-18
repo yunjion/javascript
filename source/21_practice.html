@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select id="DrinkType">
+      <option value="coke">콜라</option>
+      <option value="fanta">환타</option>
+      <option value="sprite">사이다</option>
+    </select>
+    <button onclick="doSeach()">조회1</button>
+    <button onclick="doSeach2()">조회2</button>
+
+    <table>
+      <thead>
+        <th>학번</th>
+        <th>이름</th>
+        <th>나이</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2311</td>
+          <td>윤지온</td>
+          <td>13</td>
+        </tr>
+        <tr>
+          <td>2310</td>
+          <td>윤몽</td>
+          <td>19</td>
+        </tr>
+        <tr>
+          <td>2310</td>
+          <td>돼지</td>
+          <td>20</td>
+        </tr>
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <th>음료</th>
+        <th>가격</th>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+
+    <script>
+      const doSeach = (a, b) => {
+        const drinkList = [
+          { name: "오렌지주스", price: 2000 },
+          { name: "뽀로로주스", price: 3000 },
+          { name: "이온음료", price: 1000 },
+          { name: "코카콜라", price: 1500 },
+        ];
+        let trTags = [];
+        for (drink of drinkList) {
+          trTags.push(
+            "<tr><td>" + drink.name + "</td><td>" + drink.price + "</td></tr>",
+          );
+        }
+        document.getElementById("tbody").innerHTML = trTags.join("");
+      };
+
+      const loadDrinkType = () => {
+        const drinkList = [
+          { drink: "caffe", type: "커피" },
+          { drink: "latte", type: "라떼" },
+          { drink: "ion", type: "이온음료" },
+        ];
+        for (drink of drinkList) {
+          trTags = [];
+          trTags.push(
+            "<option value=" + drink.drink + ">" + dirnk.trpe + "</option",
+          );
+        }
+        const selDrinkType = loadDrinkType();
+        document.getElementById("DrinkType").innerHTML = selDrinkType.join("");
+      };
+    </script>
+  </body>
+</html>

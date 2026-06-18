@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="n1">숫자1</label><input type="value" id="n1" />
+    <label for="n2">숫자2</label><input type="value" id="n2" />
+
+    <button onclick="doSeach()">계산</button>
+    <p>결과 : <span id="result"></span></p>
+
+    <script>
+      const doSeach = () => {
+        let num = parseInt(document.getElementById("n1").value);
+        let sum = parseInt(document.getElementById("n2").value);
+        let tum = num + sum;
+
+        document.getElementById("result").innerHTML = tum;
+      };
+    </script>
+  </body>
+</html>
