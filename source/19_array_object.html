@@ -272,7 +272,7 @@
       });
       console.log(descPoints);
 
-      const drinkList = [
+      let drinkList = [
         { name: "오렌지", price: 1000 },
         { name: "파워 에이드", price: 1200 },
         { name: "커피", price: 700 },
@@ -355,6 +355,40 @@
       });
 
       console.log(accessoriesUnder100000);
+
+      //12. reduce(p1,p2,p3,p4) : 배여릐 누적합을 구하거나 특정 조건에 맞는 내용을 추출하기
+      //p1 : accumulator => 누적값 sum
+      //p2 : currentValue => 현재값 (1)
+      //p3 : currentIndex => 현재 배열 인덱스, 생략 가능
+      //p4 : arr => 전체 배열, 생략 가능
+
+      /*형식
+       배열.reduce(누적값,현재값,인덱스,원본배열) => {
+       return 다음 누산기에 넘겨줄 값}, 초기값)
+      */
+
+      let points = [100, 98, 89, 95, 76, 64];
+      let sumPoints = points.reduce((sum, i) => {
+        sum += i;
+        return sum;
+      }, 0);
+      console.log(sumPoints);
+
+      drinkList = [
+        { name: "오렌지", price: 1000 },
+        { name: "파워 에이드", price: 1200 },
+        { name: "커피", price: 700 },
+        { name: "보리음료", price: 1200 },
+        { name: "코카콜라", price: 1800 },
+      ];
+      //가격의 합
+      let drinkListPrice = drinkList.reduce((sum, i) => {
+        sum += i.price;
+        return sum;
+      }, 0);
+      console.log(drinkListPrice);
+
+      
     </script>
   </body>
 </html>
