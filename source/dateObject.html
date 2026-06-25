@@ -6,7 +6,7 @@
     <title>Document</title>
   </head>
   <body>
-    <input type="date" name="" id="startDdate" />
+    <input type="date" name="" id="startDate" />
     <input type="date" name="" id="endDdate" />
     <script>
       //1. 날짜정보 얻어오기
@@ -46,9 +46,9 @@
 
       //****************************************************************************************
       /* 기준시 1970.1.1.0.0.0 => 밀리초로 모든 날짜를 계산하는 방식
-      - 밀리초를 구하는 내장함수 : getTile();
-      - 밀리초로 날짜를 구하는 내장함수 : Date(밀리초);
-        */
+    - 밀리초를 구하는 내장함수 : getTile();
+    - 밀리초로 날짜를 구하는 내장함수 : Date(밀리초);
+      */
 
       let stanDard = new Date(0);
       console.log(stanDard);
@@ -64,8 +64,9 @@
 
       //6. 오늘을 기준으로 1주일 전을 id = "startDate" 에 출력해보기
       let lastWeek = new Date(todayMillisec - dayMillisec * 7);
-      document.getElementById("startDdate").value = lastWeek;
-
+      document.getElementById("startDdate").value = lastWeek
+        .toISOString()
+        .split("T")[0];
       //오늘 기준으로 며칠 전후를 구하는 함수 : getIntervalDate()
 
       //2학기 평가
