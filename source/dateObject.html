@@ -63,9 +63,11 @@
       console.log(yesterDay);
 
       //6. 오늘을 기준으로 1주일 전을 id = "startDate" 에 출력해보기
-      let lastWeek = new Date(todayMillisec - dayMillisec * 7);
-      document.getElementById("startDdate").value = lastWeek;
 
+      let lastWeek = new Date(todayMillisec - dayMillisec * 7);
+      document.getElementById("startDdate").value = lastWeek
+        .toISOString()
+        .split("T")[0];
       //오늘 기준으로 며칠 전후를 구하는 함수 : getIntervalDate()
 
       //2학기 평가
