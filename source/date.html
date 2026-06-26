@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 1. 여기에 common.js를 연결합니다 (defer 속성 포함) -->
+    <script src="common.js" defer></script>
+  </head>
+  <body>
+    <!-- 오타가 났던 공백의 '<' 기호를 지웠습니다. -->
+
+    <script>
+      // 2. common.js가 먼저 로드된 후 아래 스크립트가 실행됩니다.
+      console.log(`3일 전 : ${getIntervalDate(-3)}`);
+      console.log(`7일 전 : ${getIntervalDate(-7)}`);
+      console.log(`30일 후 : ${getIntervalDate(30)}`);
+      console.log(`3일 후 : ${getIntervalDate(3)}`);
+    </script>
+  </body>
+</html>

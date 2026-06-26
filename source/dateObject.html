@@ -6,74 +6,122 @@
     <title>Document</title>
   </head>
   <body>
-    <input type="date" name="" id="startDate" />
-    <input type="date" name="" id="endDdate" />
-    <script>
-      //1. 날짜정보 얻어오기
-      let now = new Date();
-      console.log(now); //
+    <input type="date" id="startDate" />
+    <input type="date" id="endDdate" />
 
-      //2. 사용자가 날짜를 지정해서 날짜 객체 만들기
-      //년도, 월(0부터 시작),날짜,시,분,초,밀리초
-      //요일 (일요일 : 0)
+    <script>
+      // 1. 현재 날짜 정보
+      let now = new Date();
+      console.log(now);
+
+      // 2. 사용자가 날짜를 지정해서 날짜 객체 만들기
       let d = new Date(2025, 4, 29, 19, 20, 0);
       console.log(d);
 
-      //3. get() 함수 : now
+      // 3. get() 함수
       let year = now.getFullYear();
       let month = now.getMonth();
       let date = now.getDate();
       let dayName = now.getDay();
       let hour = now.getHours();
-      let minuto = now.getMinutes();
+      let minute = now.getMinutes();
       let second = now.getSeconds();
       let millisec = now.getMilliseconds();
-      console.log(year, month, date, dayName, hour, minuto, second, millisec);
 
-      //4. set() 함수 => 실무에서 거의 사용하지 않는다.
+      let dayNameArr = [
+        "일요일",
+        "월요일",
+        "화요일",
+        "수요일",
+        "목요일",
+        "금요일",
+        "토요일",
+      ];
 
-      //5. 2026-06-24
+      console.log(
+        year,
+        month + 1,
+        date,
+        dayNameArr[dayName],
+        hour,
+        minute,
+        second,
+        millisec,
+      );
+
+      // 4. 오늘 날짜를 yyyy-mm-dd 형식으로 만들기
       let today =
-        year.toString() +
+        year +
         "-" +
-        month.toString().padStart(2, "0") +
+        (month + 1).toString().padStart(2, "0") +
         "-" +
         date.toString().padStart(2, "0");
 
-      // console.log(today);
-
+      // 오늘 날짜 출력
       document.getElementById("endDdate").value = today;
 
-      //****************************************************************************************
-      /* 기준시 1970.1.1.0.0.0 => 밀리초로 모든 날짜를 계산하는 방식
-    - 밀리초를 구하는 내장함수 : getTile();
-    - 밀리초로 날짜를 구하는 내장함수 : Date(밀리초);
-      */
+      // ************************************************************
 
-      let stanDard = new Date(0);
-      console.log(stanDard);
+      // 기준시(1970-01-01)
+      let standard = new Date(0);
+      console.log(standard);
 
-      let todayMillisec = now.getTime(); //현재 밀리초
+      // 현재 시간을 밀리초로 변환
+      let todayMillisec = now.getTime();
       console.log(todayMillisec);
 
-      let dayMillisec = 24 * 60 * 60 * 100; //하루 밀리초
+      // 하루 = 24시간 × 60분 × 60초 × 1000ms
+      let dayMillisec = 24 * 60 * 60 * 1000;
       console.log(dayMillisec);
 
-      let yesterDay = new Date(todayMillisec - dayMillisec);
-      console.log(yesterDay);
+      // 어제
+      let yesterday = new Date(todayMillisec - dayMillisec);
+      console.log(yesterday);
 
-      //6. 오늘을 기준으로 1주일 전을 id = "startDate" 에 출력해보기
+      // 오늘 기준 1주일 전
+      let sevenAgo = new Date(todayMillisec - dayMillisec * 7);
+      year = sevenAgo.getFullYear();
+      month = sevenAgo.getMonth();
+      date = sevenAgo.getDate();
+      console.log(yesterday);
 
-      let lastWeek = new Date(todayMillisec - dayMillisec * 7);
-      document.getElementById("startDdate").value = lastWeek
-        .toISOString()
-        .split("T")[0];
-        
-      //오늘 기준으로 며칠 전후를 구하는 함수 : getIntervalDate()
+      sevenAgo =
+        year +
+        "-" +
+        (month + 1).toString().padStart(2, "0") +
+        "-" +
+        date.toString().padStart(2, "0");
+      document.getElementById("startDate").value = sevenAgo;
 
-      //2학기 평가
-      //중간 40% 지필
-      //수행 60% 15% 기획안 45% 동료 평가
+      // 오늘 기준으로 며칠 전 (-n)후(n)를 구하는 함수 :getIntervalDate()
+      const getIntervalDate = (day) => {
+        let today = new Date();
+        let year = now.getFullYear();
+        let month = now.getMonth();
+        let date = now.getDate();
+        let dayName = now.getDay();
+        let hour = now.getHours();
+        let minute = now.getMinutes();
+        let second = now.getSeconds();
+        let millisec = now.getMilliseconds();
+
+        let dayNameArr = [
+          "일요일",
+          "월요일",
+          "화요일",
+          "수요일",
+          "목요일",
+          "금요일",
+          "토요일",
+        ];
+        let dayMillisec = 24 * 60 * 60 * 1000;
+        let IntervalDay = now.getTime() + day * dayMillisec;
+        return new Date(IntervalDay);
+      };
+      console.log(`3일 전 : ${getIntervalDate(-3)}`);
+      console.log(`7일 전 : ${getIntervalDate(-7)}`);
+      console.log(`30일 후 : ${getIntervalDate(30)}`);
+      console.log(`3일 후 : ${getIntervalDate(3)}`);
     </script>
   </body>
 </html>
