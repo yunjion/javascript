@@ -102,32 +102,24 @@
 
       //8. 내가 원하는 포맷으로 오늘 기준으로 며칠 전 (-n)후(n)를 구하는 함수
       const getIntervalDateFormat = (day, format) => {
-        let today = new Date();
-        let dayMillisec = 24 * 60 * 60 * 1000;
-        let IntervalDay = now.getTime() + day * dayMillisec;
-        return new Date(IntervalDay);
+        const intervalDay = getIntervalDate(day);
+        const separetor = format.charAt(format.length - 3);
+        const formatArr = format.split(separetor);
 
-        let text = [];
-        for (let formatting of format) {
-          if (formatting === "YYYY") {
-            year +
-              "-" +
-              (month + 1).toString().padStart(2, "0") +
-              "-" +
-              date.toString().padStart(2, "0");
-          } else if (formatting === "YY") {
-            year.toString().slice(0, 2) +
-              (month + 2).toString().padStart(2, "0") +
-              "-" +
-              date.toString().padStart(2, "0");
-          }
-        }
+        const result = `${intervalDay
+          .getFullYear()
+          .toString()
+          .slice(
+            intervalDay.getFullYear().toString().length - formatArr[0].length,
+          )}${separetor}${(intervalDay.getMonth() + 1).toString().padStart(2, 0)}${separetor}${intervalDay.getDate().toString().padStart(2, 0)}`;
+
+        return result;
       };
-      console.log("확인" + getIntervalDateFormat(-3, "YYYY-MM-DD")); // 2026-06-28
+      console.log(getIntervalDateFormat(-3, "YYYY-MM-DD")); // 2026-06-28
       console.log(getIntervalDateFormat(3, "YY-MM-DD")); // 2026-06-24
 
       //9. 내가 원하는 구분자로 오늘 기준으로 며칠 전 (-n)후(n)를 구하는 함수]
-      
+
       //10. 내가 원하는 구분자로 오늘 기준으로 며칠 전 (-n)후(n)를 구하는 함수
     </script>
   </body>
