@@ -16,26 +16,15 @@ const taxAmount = (productPrice) => {
   let tax = 0.1;
   return tax * productPrice;
 };
-const getIntervalDate = (day) => {
-  let now = new Date();
-  let year = now.getFullYear();
-  let month = now.getMonth();
-  let date = now.getDate();
-  let dayName = now.getDay();
-  let hour = now.getHours();
-  let minute = now.getMinutes();
-  let second = now.getSeconds();
-  let millisec = now.getMilliseconds();
 
-  let dayNameArr = [
-    "일요일",
-    "월요일",
-    "화요일",
-    "수요일",
-    "목요일",
-    "금요일",
-    "토요일",
-  ];
+
+/**오늘을 기준으로 며칠 전
+ * @param {*} day
+   @returns
+ */
+
+const getIntervalDate = (day) => {
+  let today = new Date();
   let dayMillisec = 24 * 60 * 60 * 1000;
   let IntervalDay = now.getTime() + day * dayMillisec;
   return new Date(IntervalDay);
