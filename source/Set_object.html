@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set</title>
+  </head>
+  <body>
+    <script>
+      /*Set 객체 내장 함수
+         - 특징:ECMA 6버전에서 추가된 객체
+         - 배열과 매우 유사하나 유일한 요소만 갖는다
+         - 따라서 기존의 건 소스들을 간단하게 줄일 수 있다
+         - 필요한 데이터의 특징(고유한 데이터)에 따라 Set을 사용하면 많은 수고를 줄일 수 있다.
+         - 파이썬처럼 add,has,delete,clear 등의 함수를 내장하고 있다  */
+
+      //다음은 좋아하는 음식을 단답형을 입력하는 설문조사
+      //사용자가 입력한 음식 종류를 저장한 배열 foods
+      let foods = [
+        "치킨",
+        "햄버거",
+        "순대국",
+        "제육",
+        "초밥",
+        "돈까스",
+        "순대국",
+      ];
+      //1 . 배열 => 동일한 요소는 제거
+
+      for (let i = 0; i < foods.length; i++) {
+        for (let j = i + 1; j < foods.length; j++) {
+          if (foods[i] === foods[j]) {
+            foods.splice(j, 1); // j번째 요소 삭제
+            j--; // 삭제했으므로 인덱스 조정
+          }
+        }
+      }
+      console.log(foods);
+      console.log();
+
+      let uniqueFood = [];
+      uniqueFood = foods.filter((food, index) => {
+        return foods.indexOf(food) === index;
+      });
+      console.log(uniqueFood);
+
+      
+    </script>
+  </body>
+</html>
