@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map</title>
+  </head>
+  <body>
+    <script>
+      //객채와 다른 점
+      let oPerson = {};
+      oPerson.name = "공은성";
+      oPerson.phone = "010-1234-5678";
+      oPerson["185"] = 70;
+      //객체와 키와 값, 사이즈 출력
+      let count = 0;
+      for (const key in oPerson) {
+        console.log(`${key} : ${oPerson[key]}`);
+        count++;
+      }
+      console.log(`사이즈 : ${count}개`);
+
+      //1. 생성
+      let personMap = new Map();
+      personMap.set("name", "공은성");
+
+      personMap.set("phone", "010-1234-5678");
+      personMap.set(185, 70);
+
+      //2. 출력 => forEach
+      personMap.forEach((value, key) => {
+        console.log(`${key} : ${value}`);
+      });
+
+      //3. size 속성
+      console.log(`${personMap.size}개`);
+
+      //4. keys() : key만 읽어오기
+      for (const key of personMap.keys()) {
+        console.log(key);
+      }
+
+      //5. values() : value만 읽어오기
+      for (const value of personMap.values()) {
+        console.log(value);
+      }
+
+      //6. get() 특정 키의 값을 읽어오기
+      console.log(personMap.get("name")); //undefined
+
+      //7. has() : 해당 키가 존재하는지 여부 boolean
+      if (personMap.has("name")) {
+        alert("해당 키가 존재합니다");
+      }
+
+      //8. delete() : 해당 키와 값을 삭제
+      personMap.delete(185);
+      console.log(personMap.has(185));
+      console.log(personMap.size);
+    </script>
+  </body>
+</html>
