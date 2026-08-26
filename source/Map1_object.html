@@ -7,24 +7,55 @@
   </head>
   <body>
     <script>
-        /* 개발자들의 왜 일반 객체대신 map을 쓸까?
-      1. 갯수 구하기 쉬움
-      2. 자료를 추가하고 삭제하는 속도가 빠름
-      3. key에 무엇이든 올 수 있음 */
+      /* 개발자들의 왜 일반 객체대신 map을 쓸까?
+        1. 갯수 구하기 쉬움
+        2. 자료를 추가하고 삭제하는 속도가 빠름
+        3. key에 무엇이든 올 수 있음 */
 
       /* 실무 예제: 온라인 쇼핑몰 장바구니 관리
-      쇼핑몰 웹사이트를 만들 때 장바구니는 아래 기능이 반드시 필요합니다
-      1. 상품담기 (추가)
-      2. 이미 담긴 상품인지 확인하고 수량 늘리기(조회 및 수정)
-      3. 상품 빼기(삭제)
-      4. 장바구니에 총 몇 종류의 상품이 있는지 확인 (개수 파악) */
+        쇼핑몰 웹사이트를 만들 때 장바구니는 아래 기능이 반드시 필요합니다
+        1. 상품담기 (추가)
+        2. 이미 담긴 상품인지 확인하고 수량 늘리기(조회 및 수정)
+        3. 상품 빼기(삭제)
+        4. 장바구니에 총 몇 종류의 상품이 있는지 확인 (개수 파악) */
 
       const myCart = new Map();
 
-      //이미 장바구니에 들어있는 제품 목록
-      myCart.set("product_01",{name : "핸드폰", price :1800000, quantity :})
-      myCart.set("product_12",{name : "노트북", price :2100000, quantity :})
-      myCart.set("product_100",{name : "하리보", price :3000 , quantity :})
+      // 이미 장바구니에 들어있는 제품 목록
+      myCart.set("product_01", { name: "핸드폰", price: 1800000, quantity: 1 });
+      myCart.set("product_12", { name: "노트북", price: 2100000, quantity: 1 });
+      myCart.set("product_100", { name: "하리보", price: 3000, quantity: 5 });
+
+      // 추가로 구매할 상품
+      let userInput = "product_12";
+
+      // 장바구니에 있는지 확인
+      // 있다면? => 정말 추가할래? : 예 => quantity++ : 아니오 => X
+      // 없다면? => 추가 console.log("추가하였습니다")
+
+      const myCartCheckAndDo = (productId) => {
+        if (myCart.has(productId)) {
+          let check = prompt(
+            "장바구니에 제품이 들어있습니다 추가하시겠습니까?",
+          );
+          if (check === "예") {
+            console.log("제품을 추가하였습니다");
+            const item = myCart.get(productId);
+            item.quantity += 1;
+            myCart.set(productId, item);
+            console.log(
+              `현재 장바구니에 담긴 ${item.name}의 갯수 : ${item.quantity}`,
+            );
+          }
+        } else {
+          myCart.set(productId, { name: "새 상품", price: 0, quantity: 1 });
+          console.log("추가하였습니다");
+        }
+      };
+      myCartCheckAndDo(userInput);
+      //과제 
+      //showMyCart() 장바구니 내역 다 보여주기
+      // 마지막 줄 => 물건 종류 : 3종류 , 줄 갯수 : 9개 , 줄가격 ___원
     </script>
   </body>
 </html>
