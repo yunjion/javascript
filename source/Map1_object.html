@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Map</title>
   </head>
-  <body>
+   <body>
     <script>
       /* 개발자들의 왜 일반 객체대신 map을 쓸까?
         1. 갯수 구하기 쉬움
@@ -46,16 +46,32 @@
             console.log(
               `현재 장바구니에 담긴 ${item.name}의 갯수 : ${item.quantity}`,
             );
-          } 
+          }
         } else {
           myCart.set(productId, { name: "새 상품", price: 0, quantity: 1 });
           console.log("추가하였습니다");
         }
       };
       myCartCheckAndDo(userInput);
-      //과제 
+      //과제
       //showMyCart() 장바구니 내역 다 보여주기
       // 마지막 줄 => 물건 종류 : 3종류 , 줄 갯수 : 9개 , 줄가격 ___원
+
+      const showMyCart = () => {
+        let totalQuantity = 0;
+        let totalPrice = 0;
+      }
+
+      myCart.forEach((item) => {
+        totalQuantity += item.quantity;
+        totalPrice += item.price * item.quantity
+      });
+
+      console.log("물건 종류 :" + myCart.size + "종류")
+      console.log("총 갯수 : " + totalQuantity + "개")
+      console.log("총 가격 : " + totalPrice + "(원)")
+
+
     </script>
   </body>
 </html>
