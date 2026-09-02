@@ -8,8 +8,8 @@
   <body>
     <script>
       /*실무에서 set을 가장 유용하게 사용하는 경우는 데이터의 중복을 허용하지 않으면서
-    특정데이터가 존재하는지 빠른 속도로 찾아내야 하는 경우
-    - 대표적인 예시로는 '최근 본 상품 목록(중복제거)', 찜한 상품 실시간 활성화 여부 체크 */
+      특정데이터가 존재하는지 빠른 속도로 찾아내야 하는 경우
+      - 대표적인 예시로는 '최근 본 상품 목록(중복제거)', 찜한 상품 실시간 활성화 여부 체크 */
 
       const recentView = new Set();
       const wishlist = new Set();
@@ -28,6 +28,25 @@
 
       //다른 함수에서 recentView를 배열처리하고 싶은 경우
       console.log("최근 본 상품", [...recentView]);
+
+      const toggleWishlist = (productId) => {
+        if (wishlist.has(productId)) {
+          wishlist.delete(productId);
+          console.log(`${productId}찜해제`);
+          console.log(wishlist);
+        } else {
+          wishlist.add(productId);
+          console.log(`${productId}찜추가`);
+          console.log(wishlist);
+        }
+      };
+
+      //2. 활성화 여부 체크(토글)
+      toggleWishlist("바지A"); //추가
+      toggleWishlist("바지A"); //해제
+      toggleWishlist("셔츠A");
+
+      
     </script>
   </body>
 </html>

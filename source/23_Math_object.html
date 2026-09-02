@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1.round 반올림
+      //new Set(), new Map(), new Math()X Math.메서드
+      console.log(Math.round(2.4)); //2
+      console.log(Math.round(2.9)); //3
+      console.log(Math.round(-2.4)); // -2
+      console.log(Math.round(-2.9)); //-3
+
+      //2 ceil() 더 높은 것으로 올림 음수 일때 -3보다 -2가 더 크므로 -2로 반올림
+      console.log(Math.ceil(2.4)); //3
+      console.log(Math.ceil(2.9)); //3
+      console.log(Math.ceil(-2.4)); //-2
+      console.log(Math.ceil(-2.9)); //-2
+
+      //페이징 처리 : 게시판에 그림 56개 있다. 한페이지당 10개씩 노출한다. 그러면 페이지 몇개 필요하니?
+      let total = 56;
+      let countPage = 0;
+      let countPerPage = 10;
+      countPage = Math.ceil(total / countPage);
+      console.log("필요한 페이지수 ", countPage);
+
+      //3. floor() 내림
+      console.log(Math.floor(2.4)); //2
+      console.log(Math.floor(2.9)); //2
+      console.log(Math.floor(-2.4)); //-3
+      console.log(Math.floor(-2.9)); //-3
+
+      //4. trunc() 자르다
+      console.log(Math.trunc(2.4)); //2
+      console.log(Math.trunc(2.9)); //2
+      console.log(Math.trunc(-2.4)); //-2
+      console.log(Math.trunc(-2.9)); //-2
+
+      
+    </script>
+  </body>
+</html>
