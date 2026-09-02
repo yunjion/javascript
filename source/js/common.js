@@ -17,7 +17,6 @@ const taxAmount = (productPrice) => {
   return tax * productPrice;
 };
 
-
 /**오늘을 기준으로 며칠 전
  * @param {*} day
    @returns
@@ -29,3 +28,14 @@ const getIntervalDate = (day) => {
   let IntervalDay = now.getTime() + day * dayMillisec;
   return new Date(IntervalDay);
 };
+
+/**
+ * 정수 랜덤하게 출력
+ * @param {*포함하는 가장 작은 수} min
+ * @param {*포함하는 가장 큰수} max
+ * @returns
+ */
+const getRandomInteger = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+console.log(getRandomInteger(1, 3));
