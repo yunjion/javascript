@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*실무에서 set을 가장 유용하게 사용하는 경우는 데이터의 중복을 허용하지 않으면서
+    특정데이터가 존재하는지 빠른 속도로 찾아내야 하는 경우
+    - 대표적인 예시로는 '최근 본 상품 목록(중복제거)', 찜한 상품 실시간 활성화 여부 체크 */
+
+      const recentView = new Set();
+      const wishlist = new Set();
+
+      //최근 본 상품을 set에 넣는 함수
+      const viewRecentProduct = (productId) => {
+        recentView.add(productId);
+      };
+      viewRecentProduct("셔츠A");
+      viewRecentProduct("바지A");
+      viewRecentProduct("신발A");
+      viewRecentProduct("셔츠A");
+      viewRecentProduct("셔츠A");
+
+      console.log("최근 본 상품", recentView);
+
+      //다른 함수에서 recentView를 배열처리하고 싶은 경우
+      console.log("최근 본 상품", [...recentView]);
+    </script>
+  </body>
+</html>
