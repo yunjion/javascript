@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*# 9. windows 객체 내장 함수
+        - 실습 : (26_window_pbject.html)
+        1. alert() : 모양 관계로 거의 사용하지 않는다. =>
+        2. prompt() : 모양 관계로 거의 사용하지 않는다. =>
+        3. confirm( ) : 모양 관계로 거의 사용하지 않는다. =>
+        4. open() : 모양 관계로 거의 사용하지 않는다. =>
+        5. setTimeout() :
+        6. setInterval() : 시간간격으로 반복 실행 => 웹소켓 이전 많이 사용
+           - 웹소켓 이전에 주기마다 나타나는 주식 등의 데이터에 reponse하는 용도로 많이 사용했으나 너무 많은 트래픽으로 인해 서버 다운의 문제점 발생
+           - 노드에서는 데이터가 변할 때만 자료를 주는 방식으로 변화....
+        7. clearInterval(), clearTimeout() : setInterval을 중지시키는 역할
+        */
+      const pwd = "1234";
+      function doDelete() {
+        let userInput = window.prompt("비밀번호 입력 :");
+        if (pwd === userInput) {
+          if (confirm("정말 삭제하시겠습니까?")) {
+            console.log("삭제");
+          } else {
+            console.log("취소하였습니다");
+          }
+        } else {
+          window.alert("비밀번호 오류");
+        }
+      }
+      //doDelete();
+
+      const openNaver = () => {
+        window.open("https://naver.com");
+      };
+      //openNaver();
+
+      //setTimeout:밀리초
+      const myTimeout = setTimeout(function () {
+        openNaver();
+      }, 3000);
+
+      const myInterval = setInterval(() => {
+        console.log("2초마다 나온다");
+      }, 2000);
+
+      clearInterval(myInterval);
+      clearInterval(myTimeout);
+    </script>
+  </body>
+</html>
