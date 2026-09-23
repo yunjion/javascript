@@ -25,7 +25,7 @@ const taxAmount = (productPrice) => {
 const getIntervalDate = (day) => {
   let today = new Date();
   let dayMillisec = 24 * 60 * 60 * 1000;
-  let IntervalDay = now.getTime() + day * dayMillisec;
+  let IntervalDay = today.getTime() + day * dayMillisec;
   return new Date(IntervalDay);
 };
 
@@ -35,7 +35,27 @@ const getIntervalDate = (day) => {
  * @param {*포함하는 가장 큰수} max
  * @returns
  */
+
 const getRandomInteger = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 console.log(getRandomInteger(1, 3));
+
+/**
+ *
+ * @param {*} day
+ * @param {*} format
+ * @returns
+ */
+const getIntervalDateFormat = (day, format = "YYYY-MM-DD") => {
+  const intervalDate = getIntervalDate(day);
+  const year = intervalDate.getFullYear().toString();
+  const month = (intervalDate.getMonth() + 1).toString().padStart(2, "0");
+  const date = intervalDate.getDate().toString().padStart(2, "0");
+
+  return format
+    .replace("YYYY", year)
+    .replace("YY", year.slice(-2))
+    .replace("MM", month)
+    .replace("DD", date);
+};

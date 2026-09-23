@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //``
+      function sayHello(firstName, lastName) {
+        alert("Hello" + firstName + " " + lastName + "!~");
+      }
+      function sayHello(firstName, lastName) {
+        alert(`Hello ${firstName} ${lastName}!~`);
+      }
+      sayHello("홍", "성재");
+
+      let personMap = new Map();
+      personMap.set("name", "공은성");
+      personMap.set("phone", "010-1234-5678");
+      personMap.set("185", "70");
+      console.log(personMap);
+      //내부적으로 toString() 메서드를 호출
+      //${객체} => [object Map]
+
+      console.log(`personMap : ${personMap}`);
+    </script>
+  </body>
+</html>
