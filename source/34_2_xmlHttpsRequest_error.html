@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const getData = (data) => {
+        const xhr = new XMLHttpRequest();
+
+        xhr.open("GET", `http://localhost:3000/${data}`);
+        xhr.setRequestHeader("content-type", "application/json");
+        xhr.send();
+
+        xhr.onload = () => {
+          if (xhr.status === 200) {
+            const result = JSON.parse(xhr.response);
+            console.log(result);
+
+            return result;
+          } else {
+            console.log(xhr.status, xhr.statusText);
+          }
+        };
+      };
+      const data = getData("posts");
+      console.log(data);
+
+      
+
+        /* 단점 
+      1. 비동기 방식 => send()를 하고 나서 response가 올 때까지 기다리지 않는다.
+      2. rendering 하는데 약간의 제약이 있다. 
+      3. undefined가 발생가능하다. => Promise 
+      */
+    </script>
+  </body>
+</html>

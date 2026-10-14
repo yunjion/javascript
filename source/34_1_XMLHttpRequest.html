@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //조회(GET,200)
+      const getPosts = () => {
+        //1. 객체 생성
+      };
+      getPosts();
+      const getcomments = () => {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://localhost:3000/comments");
+        xhr.setRequestHeader("content-type", "application/json");
+        xhr.send();
+        xhr.onload = () => {
+          if (xhr.status === 200) {
+            const result = JSON.parse(xhr.response);
+            console.log(result);
+          } else {
+            console.log(xhr.status, xhr.statusText);
+          }
+        };
+      };
+      const getData = (data) => {
+        const xhr = new XMLHttpRequest();
+
+        xhr.open("GET", `http://localhost:3000/${data}`);
+        xhr.setRequestHeader("content-type", "application/json");
+        xhr.send();
+
+        xhr.onload = () => {
+          if (xhr.status === 200) {
+            const result = JSON.parse(xhr.response);
+            console.log(result);
+          } else {
+            console.log(xhr.status, xhr.statusText);
+          }
+        };
+      };
+
+      //2.생성(POST,201)
+      const postData = (target) => {
+        const xhr = new XMLHttpRequest();
+
+        xhr.open("POST", `http://localhost:3000/${target}`);
+        xhr.setRequestHeader("content-type", "application/json");
+        const newData = { id: 3, title: "kongES", views: 2000 };
+
+        xhr.send(JSON.stringify(newData));
+
+        xhr.onload = () => {
+          if (xhr.status === 200) {
+            const result = JSON.parse(xhr.response);
+            console.log(result);
+          } else {
+            console.log(xhr.status, xhr.statusText);
+          }
+        };
+      };
+      //3.수정(GET,200)
+      const putData = (target) => {
+        const xhr = new XMLHttpRequest();
+
+        xhr.open("PUT", `http://localhost:3000/${target}`); //id
+        xhr.setRequestHeader("content-type", "application/json:chareset=utf-8");
+        const putData = { title: "kongES", views: 150 };
+
+        xhr.send(JSON.stringify(putData));
+
+        xhr.onload = () => {
+          if (xhr.status === 200) {
+            const result = JSON.parse(xhr.response);
+            console.log(result);
+          } else {
+            console.log(xhr.status, xhr.statusText);
+          }
+        };
+      };
+      //4.삭제(DELETE,200)
+      const deleteData = (target) => {
+        const xhr = new XMLHttpRequest();
+
+        xhr.open("DELETE", `http://localhost:3000/${target}`);
+        xhr.setRequestHeader("content-type", "application/json");
+
+        xhr.send();
+
+        xhr.onload = () => {
+          if (xhr.status === 200) {
+            const result = JSON.parse(xhr.response);
+            console.log(result);
+          } else {
+            console.log(xhr.status, xhr.statusText);
+          }
+        };
+      };
+
+      // getPosts(); //post
+      // getcomments(); //comments
+      // getData("posts"); //post
+      // getData("comments"); //comments
+      // getData("profile"); //profile
+      // postData("posts");
+      // putData("posts/Dd4T86aPWJs");
+      deleteData("posts/s2zXENhJzXE");
+      deleteData("comments/2");
+      /* 단점 
+      1. 비동기 방식 => send()를 하고 나서 response가 올 때까지 기다리지 않는다.
+      2. rendering 하는데 약간의 제약이 있다. 
+
+      */
+    </script>
+  </body>
+</html>
